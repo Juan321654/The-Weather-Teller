@@ -47,17 +47,13 @@ Sample JSON:
 ## Wireframes
 
 https://wireframe.cc/DBy7pV
-
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+ 
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- choose a city
+- choose between Fahrenheit and Celsius
+- display weather conditions such as humidy, cloudy etc.
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
