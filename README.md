@@ -2,7 +2,7 @@
 
 ## Project Name
 
-The name of your project.
+The Weather Teller
 
 ## Project Description
 
