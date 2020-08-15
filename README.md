@@ -56,10 +56,12 @@ https://wireframe.cc/DBy7pV
 - display weather conditions such as humidy, cloudy etc.
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- make the background change to warm or cool colors depending on the temp
+- make transition effect when clicking F to C
+- make a transition to the background when changing colors
+- make text color change according to temp
+- make city, icon, temp, description, conditions fade in when called.
 
 ## Project Schedule
 
