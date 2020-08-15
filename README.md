@@ -6,7 +6,8 @@ The Weather Teller
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+The Weather Teller its a place where you can find the current weather in your area or other cities. 
+do you want to go out to the beach? Maybe go on a picnic? This app will let you know how windy, cloudy, rainy, or humid it is outside so you can plan accordingly.
 
 ## API and Data Sample
 
