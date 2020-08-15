@@ -11,7 +11,7 @@ do you want to go out to the beach? Maybe go on a picnic? This app will let you 
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+https://openweathermap.org/current
 
 Sample JSON:
 ```json
