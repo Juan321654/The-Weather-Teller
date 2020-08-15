@@ -15,25 +15,32 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 Sample JSON:
 ```json
 {
-    "Search": [
+    "coord": {
+        "lon": -73.92,
+        "lat": 40.83
+    },
+    "weather": [
         {
-            "Title": "Crash",
-            "Year": "2004",
-            "imdbID": "tt0375679",
-            "Type": "movie",
-            "Poster": "https://m.media-amazon.com/images/M/MV5BOTk1OTA1MjIyNV5BMl5BanBnXkFtZTcwODQxMTkyMQ@@._V1_SX300.jpg"
-        },
-        {
-            "Title": "Crash",
-            "Year": "1996",
-            "imdbID": "tt0115964",
-            "Type": "movie",
-            "Poster": "https://m.media-amazon.com/images/M/MV5BZjlhMDBlNDQtMjZkZi00NzJmLWI4MTgtZDdkMzZmZDcyZGNmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-        },
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+        }
     ],
-    "totalResults": "354",
-    "Response": "True"
-}
+    "base": "stations",
+    "main": {
+        "temp": 301.4,
+        "feels_like": 299.47,
+        "temp_min": 300.37,
+        "temp_max": 302.59,
+        "pressure": 1016,
+        "humidity": 48
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 5.7,
+        "deg": 50
+    },
 ```
 
 ## Wireframes
