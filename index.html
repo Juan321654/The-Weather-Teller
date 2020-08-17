@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Weather Teller</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="/script.js"></script>
+</head>
+<body>
+    <div id="app-container">
+       <form>
+        <input type="text" id="user-input" placeholder="Search by City">
+        <button id="button">Search</button>
+       </form>
+        <div id="location">
+            <p>Bay Shore</p>
+        </div>
+        <div id="temp">
+            <img id="temp-icon" src="Pictures\Main.png">
+            <p><span id="temp-value">25</span><span id="temp-unit">&#176C</span></p>
+        </div>
+        <div id="climate">
+            <p>Sunny</p>
+        </div>
+        <div id="weather-condition">
+            <ul><li>feels like <span id="feels">57</span></li>
+                <li>Humidity <span id="humidity">57</span></li>
+                <li>pressure <span id="pressure">57</span></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
