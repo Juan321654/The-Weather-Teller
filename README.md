@@ -87,14 +87,15 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML structure | L | 1hrs|  |  |
+| HTML structure | L | 2 hrs|  |  |
 | Working with API | H | 3hrs|  |  |
-| Basic CSS | L | 2hrs|  |  |
-| Basic JS | H | 8hrs|  |  |
-| MVP | H | 14hrs|  |  |
-| advanced JS | L | 8hrs|  |  |
+| Basic CSS | L | 3hrs|  |  |
+| changing C to F | H | 2 hr|  |  |
+| displaying conditions | H | 3 hrs|  |  |
+| displaying city | H | 3 hrs|  |  |
+| displaying weather icons | H | 3 hrs|  |  |
 | advanced CSS (animation | H | 4hrs|  |  |
-| Total | H | 26hrs|  | |
+| Total | H | 31 hrs|  | |
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
