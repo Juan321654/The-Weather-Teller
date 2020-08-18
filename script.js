@@ -1,7 +1,13 @@
 //key x8MvRdyVjz marker.
 //key weather fd4262e97d395dae4da9895a5f543573
 
+
+
 const form = document.querySelector('form')
+let tempIcon = document.querySelector('#temp-icon')
+let tempValue = document.querySelector('#temperature')
+let weatherConditions = document.querySelector('#conditions')
+
 const formValue = function (e) {
   e.preventDefault()
   const input = document.querySelector('input').value
@@ -12,18 +18,26 @@ const formValue = function (e) {
 async function getData(cityName) {
   try {
     let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`)
-    // console.log(response.data)
+    console.log(response.data.main.temp)
     appendCityData(response.data)
+    tempValue.textContent = response.data.main.temp
+    // console.log("this is", tempValue)
+
+
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
 function appendCityData(cityData) {
-  console.log("line 22", cityData.name)
+//   console.log("line 22", cityData.name)
   const cityNameEl = document.querySelector('div')
   cityNameEl.textContent = cityData.name
 }
 form.addEventListener('submit', formValue)
+
+
+
+
 
 
 
