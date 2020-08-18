@@ -7,6 +7,7 @@ const form = document.querySelector('form')
 let tempIcon = document.querySelector('#temp-icon')
 let tempValue = document.querySelector('#temperature')
 let weatherConditions = document.querySelector('#conditions')
+let humidityData = document.querySelector('#humidity')
 
 const formValue = function (e) {
   e.preventDefault()
@@ -18,9 +19,12 @@ const formValue = function (e) {
 async function getData(cityName) {
   try {
     let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`)
-    console.log(response.data.main.temp)
+    console.log(response.data)
     appendCityData(response.data)
     tempValue.textContent = response.data.main.temp
+    weatherConditions.textContent = response.data.weather[0].description
+    humidityData.textContent = response.data.main.humidity
+    humidityData.createTextNode("Humidity:")
     // console.log("this is", tempValue)
 
 
