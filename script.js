@@ -8,6 +8,7 @@ let tempIcon = document.querySelector('#temp-icon')
 let tempValue = document.querySelector('#temperature')
 let weatherConditions = document.querySelector('#conditions')
 let humidityData = document.querySelector('#humidity')
+let windSpeedData = document.querySelector('#wind')
 
 const formValue = function (e) {
   e.preventDefault()
@@ -24,6 +25,7 @@ async function getData(cityName) {
     tempValue.textContent = response.data.main.temp
     weatherConditions.textContent = response.data.weather[0].description
     humidityData.textContent = response.data.main.humidity
+    windSpeedData.textContent = response.data.wind.speed
 
     // console.log("this is", tempValue)
 
