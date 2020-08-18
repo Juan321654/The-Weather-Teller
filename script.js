@@ -24,7 +24,7 @@ async function getData(cityName) {
     tempValue.textContent = response.data.main.temp
     weatherConditions.textContent = response.data.weather[0].description
     humidityData.textContent = response.data.main.humidity
-    humidityData.createTextNode("Humidity:")
+
     // console.log("this is", tempValue)
 
 
