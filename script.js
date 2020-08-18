@@ -5,38 +5,31 @@
 
 
 const getOptions = async(cityName) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573`
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`
     try {
         const response = await axios.get(url)
-        console.log(response)            //1
-        const allData = response.data          //2
-        console.log(allData)                     //3       //5
+        console.log(response)            
+        const allData = response.data          
+        console.log(allData)                     
     }catch (error) {
         console.log(`Error: ${error}`)
     }
-    
 }
 getOptions()
-
-// function getInput (e) {
-//     e.preventDefault()
-
-// }
 
 const inputButton = document.querySelector('#button')
 // console.log(inputButton)
 inputButton.addEventListener('click', getValue)
 
-// const userInput = addEventListener('click', cityName)
 
-function getValue (e) {         //12         e stands for event
+function getValue (e) {         
     e.preventDefault()
-    const optionValue = document.querySelector('#user-input').value  //13
-    console.log(optionValue)      //14•  this wont show on web dev tool yet
+    const optionValue = document.querySelector('#user-input').value  
+    console.log(optionValue)      
     getOptions(optionValue)
     const cityLocation = document.querySelector('#location')
     const cityDiv = document.createElement('p')
     cityDiv.classList.add('#location')
-    cityDiv.append(optionValue)
+    cityLocation.append(optionValue)
     console.log(cityLocation)
 }
