@@ -4,12 +4,14 @@
 
 
 const form = document.querySelector('form')
-let tempIcon = document.querySelector('#temp-icon')
+let tempIcon = document.querySelector('#weather-picture')
 let tempValue = document.querySelector('#temperature')
 let weatherConditions = document.querySelector('#conditions')
 let humidityData = document.querySelector('#humidity')
 let windSpeedData = document.querySelector('#wind')
+let weatherPicture;
 
+//this function gets the user input
 const formValue = function (e) {
   e.preventDefault()
   const input = document.querySelector('input').value
@@ -26,19 +28,37 @@ async function getData(cityName) {
     weatherConditions.textContent = response.data.weather[0].description
     humidityData.textContent = response.data.main.humidity
     windSpeedData.textContent = response.data.wind.speed
-
-    // console.log("this is", tempValue)
-
+    weatherIdData = response.data.weather[0].id
+    // console.log(weatherIdData)
+    if (weatherIdData < 250 ){
+        tempIcon.src = './Pictures/thunder.png'
+    }else if (weatherIdData < 350) {
+        tempIcon.src = './Pictures/drizzle.png'
+    }else if (weatherIdData < 550) {
+        tempIcon.src = './Pictures/rain.png'
+    }else if (weatherIdData < 650) {
+        tempIcon.src = './Pictures/snow.png'
+    }else if (weatherIdData < 790) {
+        tempIcon.src = './Pictures/mist.png'
+    }else if (weatherIdData === 800) {
+        tempIcon.src = './Pictures/sun.png'
+    }else if (weatherIdData > 800) {
+        tempIcon.src = './Pictures/cloud.png'
+    }
 
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
+
+
 function appendCityData(cityData) {
 //   console.log("line 22", cityData.name)
   const cityNameEl = document.querySelector('#user-city')
   cityNameEl.textContent = cityData.name
 }
+
+
 form.addEventListener('submit', formValue)
 
 
