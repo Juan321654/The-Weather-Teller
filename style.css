@@ -50,16 +50,16 @@ button, input {
 * {
     margin: 0;
     padding: 0;
+    
 } 
 
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: .5rem;
-    padding: .75rem;
     width: 100vw;
-    height: 100vh;
+    height: 100vh;background: linear-gradient(rgb(248, 191, 84), rgb(162, 223, 231));
+    font-size: 25px;
 }
 
 #weather-picture {
@@ -70,9 +70,15 @@ button, input {
 form,
 img
 {
-    padding: 50px;
+    padding: 60px;
 }
 
 div {
     padding: 10px;
+}
+
+button, input {
+    background-color:rgba(255, 255, 255, 0.774);
+    border-radius: 7px;
+    height:25px;
 }
