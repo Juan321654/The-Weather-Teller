@@ -45,7 +45,7 @@ async function getData(cityName) {
     }else if (weatherIdData > 800) {
         tempIcon.src = './Pictures/cloud.png'
     }
-
+    switchFtoC(tempValue.textContent)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
@@ -61,7 +61,11 @@ function appendCityData(cityData) {
 
 form.addEventListener('submit', formValue)
 
-
+function switchFtoC (target) {
+  tempValue.addEventListener('click', () => {
+    tempValue.innerHTML = (target - 32) * 5/9;
+  })
+}
 
 
 
