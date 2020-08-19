@@ -6,6 +6,8 @@
 const form = document.querySelector('form')
 let tempIcon = document.querySelector('#weather-picture')
 let tempValue = document.querySelector('#temperature')
+let fahrenheitButton = document.querySelector('.fahrenheit')
+let celsiusButton = document.querySelector('.celsius')
 let weatherConditions = document.querySelector('#conditions')
 let humidityData = document.querySelector('#humidity')
 let windSpeedData = document.querySelector('#wind')
@@ -46,6 +48,8 @@ async function getData(cityName) {
         tempIcon.src = './Pictures/cloud.png'
     }
     switchFtoC(tempValue.textContent)
+    switchCtoF(tempValue.textContent)
+    
     // switchCtoF(tempValue.textContent)
   } catch (error) {
     console.log(`Error: ${error}`)
@@ -63,19 +67,18 @@ function appendCityData(cityData) {
 form.addEventListener('submit', formValue)
 
 function switchFtoC (target) {
-  tempValue.addEventListener('click', () => {
+  celsiusButton.addEventListener('click', () => {
     tempValue.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
   })
 }
 
-function myFunction() {
-  var x = document.querySelector("myDIV");
-  if (x.innerHTML === "Hello") {
-    x.innerHTML = "Swapped text!";
-  } else {
-    x.innerHTML = "Hello";
-  }
+function switchCtoF (target) {
+  fahrenheitButton.addEventListener('click', () => {
+    tempValue.innerHTML = Math.floor((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+  })
 }
+
+
 
 
 
