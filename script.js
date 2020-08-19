@@ -36,7 +36,7 @@ async function getData(cityName) {
 }
 function appendCityData(cityData) {
 //   console.log("line 22", cityData.name)
-  const cityNameEl = document.querySelector('div')
+  const cityNameEl = document.querySelector('#user-city')
   cityNameEl.textContent = cityData.name
 }
 form.addEventListener('submit', formValue)
