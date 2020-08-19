@@ -24,7 +24,7 @@ async function getData(cityName) {
     let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`)
     console.log(response.data)
     appendCityData(response.data)
-    tempValue.textContent = response.data.main.temp
+    tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`
     weatherConditions.textContent = response.data.weather[0].description
     humidityData.textContent = response.data.main.humidity
     windSpeedData.textContent = response.data.wind.speed
@@ -46,6 +46,7 @@ async function getData(cityName) {
         tempIcon.src = './Pictures/cloud.png'
     }
     switchFtoC(tempValue.textContent)
+    // switchCtoF(tempValue.textContent)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
@@ -63,10 +64,18 @@ form.addEventListener('submit', formValue)
 
 function switchFtoC (target) {
   tempValue.addEventListener('click', () => {
-    tempValue.innerHTML = (target - 32) * 5/9;
+    tempValue.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
   })
 }
 
+function myFunction() {
+  var x = document.querySelector("myDIV");
+  if (x.innerHTML === "Hello") {
+    x.innerHTML = "Swapped text!";
+  } else {
+    x.innerHTML = "Hello";
+  }
+}
 
 
 
