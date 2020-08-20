@@ -94,7 +94,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | displaying conditions | H | 3 hrs| 2hr |  |
 | displaying city | H | 3 hrs| 3hr |  |
 | displaying weather icons | H | 3 hrs| 1hr |  |
-| Total | H | 31 hrs| 22 | |
+| Total | H | 19 hrs| 22 | |
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
