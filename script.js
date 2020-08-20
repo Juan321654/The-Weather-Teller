@@ -32,8 +32,8 @@ async function getData(cityName) {
     weatherConditions.textContent = response.data.weather[0].description;
     humidityData.textContent = " " + response.data.main.humidity + "%";
     windSpeedData.textContent = " " + response.data.wind.speed + " mph";
-    minTempData.textContent = `Min temp: ${response.data.main.temp_min}°F`
-    maxTempData.textContent = `Max temp: ${response.data.main.temp_max}°F`
+    minTempData.textContent = response.data.main.temp_min
+    maxTempData.textContent = response.data.main.temp_max
     weatherIdData = response.data.weather[0].id;
     // console.log(weatherIdData)
     if (weatherIdData < 250 ){
@@ -53,6 +53,10 @@ async function getData(cityName) {
     }
     switchFtoC(tempValue.textContent)
     switchCtoF(tempValue.textContent)
+    minTempSwitchFtoC(minTempData.textContent)
+    minTempSwitchCtoF(minTempData.textContent)
+    maxTempSwitchCtoF(maxTempData.textContent)
+    maxTempSwitchFtoC(maxTempData.textContent)
     
     // switchCtoF(tempValue.textContent)
   } catch (error) {
@@ -82,82 +86,26 @@ function switchCtoF (target) {
   })
 }
 
+function minTempSwitchFtoC (target) {
+  celsiusButton.addEventListener('click', () => {
+    minTempData.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
+  })
+}
 
+function minTempSwitchCtoF (target) {
+  fahrenheitButton.addEventListener('click', () => {
+    minTempData.innerHTML = Math.floor((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+  })
+}
 
+function maxTempSwitchFtoC (target) {
+  celsiusButton.addEventListener('click', () => {
+    maxTempData.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
+  })
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const getOptions = async(cityName) => {
-//     const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`
-//     try {
-//         const response = await axios.get(url)
-//         // console.log(response)            
-//         const allData = response.data          
-//         // console.log(allData)   
-//         // removeCity(getValue)                  
-//     }catch (error) {
-//         console.log(`Error: ${error}`)
-//     }
-// }
-// getOptions()
-
-// const inputButton = document.querySelector('#button')
-// // console.log(inputButton)
-// inputButton.addEventListener('click', getValue)
-
-// //this function adds gets the user city input, and adds it to the screen
-// function getValue (e) {         
-//     e.preventDefault()
-//     const optionValue = document.querySelector('#user-input').value  
-//     console.log(optionValue)      
-//     getOptions(optionValue)
-//     const cityLocation = document.querySelector('#append')
-//     const cityDiv = document.createElement('p')
-//     cityDiv.classList.add('#location')
-//     cityLocation.append(optionValue)
-//     // console.log(cityLocation)
-    
-// }
-
-
-// function removeCity () {
-//     const oldCity = document.querySelector('#append')
-//     console.log(oldCity)
-//     while(oldCity.firstChild){
-//         oldCity.removeChild(oldCity.firstChild)
-//     }
-// }
+function maxTempSwitchCtoF (target) {
+  fahrenheitButton.addEventListener('click', () => {
+    maxTempData.innerHTML = Math.floor((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+  })
+}
