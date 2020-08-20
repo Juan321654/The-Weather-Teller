@@ -31,7 +31,7 @@ async function getData(cityName) {
     tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`;
     weatherConditions.textContent = response.data.weather[0].description;
     humidityData.textContent = " " + response.data.main.humidity + "%";
-    windSpeedData.textContent = " " + response.data.wind.speed + " mph";
+    windSpeedData.textContent = response.data.wind.speed
     minTempData.textContent = response.data.main.temp_min
     maxTempData.textContent = response.data.main.temp_max
     weatherIdData = response.data.weather[0].id;
@@ -57,6 +57,8 @@ async function getData(cityName) {
     minTempSwitchCtoF(minTempData.textContent)
     maxTempSwitchCtoF(maxTempData.textContent)
     maxTempSwitchFtoC(maxTempData.textContent)
+    windMphtoKph(windSpeedData.textContent)
+    windKphtoMph(windSpeedData.textContent)
     
     // switchCtoF(tempValue.textContent)
   } catch (error) {
@@ -76,36 +78,48 @@ form.addEventListener('submit', formValue)
 
 function switchFtoC (target) {
   celsiusButton.addEventListener('click', () => {
-    tempValue.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
+    tempValue.innerHTML = Math.round((parseInt(target) - 32) * 5/9) + '\xB0C';
   })
 }
 
 function switchCtoF (target) {
   fahrenheitButton.addEventListener('click', () => {
-    tempValue.innerHTML = Math.floor((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+    tempValue.innerHTML = Math.round((parseInt(target) * 5/9) + 32 ) + '\xB0F';
   })
 }
 
 function minTempSwitchFtoC (target) {
   celsiusButton.addEventListener('click', () => {
-    minTempData.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
+    minTempData.innerHTML = Math.round((parseInt(target) - 32) * 5/9) + '\xB0C';
   })
 }
 
 function minTempSwitchCtoF (target) {
   fahrenheitButton.addEventListener('click', () => {
-    minTempData.innerHTML = Math.floor((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+    minTempData.innerHTML = Math.round((parseInt(target) * 5/9) + 32 ) + '\xB0F';
   })
 }
 
 function maxTempSwitchFtoC (target) {
   celsiusButton.addEventListener('click', () => {
-    maxTempData.innerHTML = Math.floor((parseInt(target) - 32) * 5/9) + '\xB0C';
+    maxTempData.innerHTML = Math.round((parseInt(target) - 32) * 5/9) + '\xB0C';
   })
 }
 
 function maxTempSwitchCtoF (target) {
   fahrenheitButton.addEventListener('click', () => {
-    maxTempData.innerHTML = Math.floor((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+    maxTempData.innerHTML = Math.round((parseInt(target) * 5/9) + 32 ) + '\xB0F';
+  })
+}
+
+function windMphtoKph (target) {
+  celsiusButton.addEventListener('click', () => {
+    windSpeedData.innerHTML = " " + Math.round(target * 1.609) + " Kph"
+  })
+}
+
+function windKphtoMph (target) {
+  fahrenheitButton.addEventListener('click', () => {
+    windSpeedData.innerHTML = " " + Math.round(target / 1.609) + " Mph"
   })
 }
