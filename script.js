@@ -36,29 +36,46 @@ async function getData(cityName) {
     maxTempData.textContent = response.data.main.temp_max;
 
     weatherIdData = response.data.weather[0].id;
-    // console.log(weatherIdData)
+    //use this variable to test the if conditions and comment out the actual variable--
+    // weatherIdData = 349        
+    //---------------------------------------------------------------------------------
+
     //pictures and text color to display depending on weather ID
     if (weatherIdData < 250 ){
         tempIcon.src = './Pictures/thunder.png';
         bodyTextColor.style.color = "#8f7727";
+        celsiusButton.style.color = "#8f7727";
+        fahrenheitButton.style.color = "#8f7727";
     }else if (weatherIdData < 350) {
         tempIcon.src = './Pictures/drizzle.png';
         bodyTextColor.style.color = "#4d7d74";
+        celsiusButton.style.color = "#4d7d74";
+        fahrenheitButton.style.color = "#4d7d74";
     }else if (weatherIdData < 550) {
         tempIcon.src = './Pictures/rain.png';
         bodyTextColor.style.color = "#3cccbe";
+        celsiusButton.style.color = "#3cccbe";
+        fahrenheitButton.style.color = "#3cccbe";
     }else if (weatherIdData < 650) {
         tempIcon.src = './Pictures/snow.png';
         bodyTextColor.style.color = "#4e6670";
+        celsiusButton.style.color = "#4e6670";
+        fahrenheitButton.style.color = "#4e6670";
     }else if (weatherIdData < 790) {
         tempIcon.src = './Pictures/mist.png';
         bodyTextColor.style.color = "#6491a8";
+        celsiusButton.style.color = "#6491a8";
+        fahrenheitButton.style.color = "#6491a8";
     }else if (weatherIdData === 800) {
         tempIcon.src = './Pictures/sun.png';
         bodyTextColor.style.color = "#db9652";
+        celsiusButton.style.color = "#db9652";
+        fahrenheitButton.style.color = "#db9652";
     }else if (weatherIdData > 800) {
         tempIcon.src = './Pictures/cloud.png';
         bodyTextColor.style.color = "#4e6670";
+        celsiusButton.style.color = "#4e6670";
+        fahrenheitButton.style.color = "#4e6670";
     }
 
     //switches to display F or C, mph or kph

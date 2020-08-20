@@ -6,7 +6,7 @@
 } 
 
 body {
-    color: rgb(248, 95, 6);
+    color: #4d7d74;
 }
 
 #container {
@@ -35,10 +35,11 @@ div {
 }
 
 button, input {
-    background-color:rgba(255, 255, 255, 0.774);
+    background-color:rgba(255, 255, 255, 0.5);
     border-radius: 7px;
     height:5vh;
     border-color: rgba(220, 110, 20, 0.568);
+    color: #4d7d74;
 }
 
 
