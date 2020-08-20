@@ -23,6 +23,7 @@ form,
 img
 {
     padding: 5vh;
+
 }
 
 div {
@@ -33,4 +34,11 @@ button, input {
     background-color:rgba(255, 255, 255, 0.774);
     border-radius: 7px;
     height:5vh;
+    border-color: rgba(220, 110, 20, 0.568);
+}
+
+
+button:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
 }
