@@ -1,7 +1,4 @@
-//key x8MvRdyVjz marker.
 //key weather fd4262e97d395dae4da9895a5f543573
-
-
 
 const form = document.querySelector('form');
 let tempIcon = document.querySelector('#weather-picture');
@@ -16,65 +13,71 @@ let maxTempData = document.querySelector('#max-temp');
 
 //this function gets the user input
 const formValue = function (e) {
-  e.preventDefault()
-  const input = document.querySelector('input').value
-  document.querySelector('input').value = ''
-  console.log(input)
-  getData(input)
+  e.preventDefault();
+  const input = document.querySelector('input').value;
+  document.querySelector('input').value = '';
+  console.log(input);
+  getData(input);
 }
+
+form.addEventListener('submit', formValue);
+
 async function getData(cityName) {
   try {
-    let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`)
-    console.log(response.data)
-    appendCityData(response.data)
+    let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`);
+    console.log(response.data);
+    appendCityData(response.data);
     tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`;
     weatherConditions.textContent = response.data.weather[0].description;
     humidityData.textContent = " " + response.data.main.humidity + "%";
-    windSpeedData.textContent = response.data.wind.speed
-    minTempData.textContent = response.data.main.temp_min
-    maxTempData.textContent = response.data.main.temp_max
+    windSpeedData.textContent = response.data.wind.speed;
+    minTempData.textContent = response.data.main.temp_min;
+    maxTempData.textContent = response.data.main.temp_max;
+
     weatherIdData = response.data.weather[0].id;
     // console.log(weatherIdData)
+    //pictures to display depending on weather ID
     if (weatherIdData < 250 ){
-        tempIcon.src = './Pictures/thunder.png'
+        tempIcon.src = './Pictures/thunder.png';
     }else if (weatherIdData < 350) {
-        tempIcon.src = './Pictures/drizzle.png'
+        tempIcon.src = './Pictures/drizzle.png';
     }else if (weatherIdData < 550) {
-        tempIcon.src = './Pictures/rain.png'
+        tempIcon.src = './Pictures/rain.png';
     }else if (weatherIdData < 650) {
-        tempIcon.src = './Pictures/snow.png'
+        tempIcon.src = './Pictures/snow.png';
     }else if (weatherIdData < 790) {
-        tempIcon.src = './Pictures/mist.png'
+        tempIcon.src = './Pictures/mist.png';
     }else if (weatherIdData === 800) {
-        tempIcon.src = './Pictures/sun.png'
+        tempIcon.src = './Pictures/sun.png';
     }else if (weatherIdData > 800) {
-        tempIcon.src = './Pictures/cloud.png'
+        tempIcon.src = './Pictures/cloud.png';
     }
-    switchFtoC(tempValue.textContent)
-    switchCtoF(tempValue.textContent)
-    minTempSwitchFtoC(minTempData.textContent)
-    minTempSwitchCtoF(minTempData.textContent)
-    maxTempSwitchCtoF(maxTempData.textContent)
-    maxTempSwitchFtoC(maxTempData.textContent)
-    windMphtoKph(windSpeedData.textContent)
-    windKphtoMph(windSpeedData.textContent)
+
+    //switches to display F or C, mph or kph
+    switchFtoC(tempValue.textContent);
+    switchCtoF(tempValue.textContent);
+    minTempSwitchFtoC(minTempData.textContent);
+    minTempSwitchCtoF(minTempData.textContent);
+    maxTempSwitchCtoF(maxTempData.textContent);
+    maxTempSwitchFtoC(maxTempData.textContent);
+    windMphtoKph(windSpeedData.textContent);
+    windKphtoMph(windSpeedData.textContent);
     
     // switchCtoF(tempValue.textContent)
   } catch (error) {
-    console.log(`Error: ${error}`)
+    console.log(`Error: ${error}`);
   }
 }
 
-
+//name of city to display on screen
 function appendCityData(cityData) {
-//   console.log("line 22", cityData.name)
-  const cityNameEl = document.querySelector('#user-city')
-  cityNameEl.textContent = cityData.name
+  const cityNameEl = document.querySelector('#user-city');
+  cityNameEl.textContent = cityData.name;
 }
 
 
-form.addEventListener('submit', formValue)
 
+//switches for F and C, mph and kph ---------------
 function switchFtoC (target) {
   celsiusButton.addEventListener('click', () => {
     tempValue.innerHTML = Math.round((parseInt(target) - 32) * 5/9) + '\xB0C';
@@ -113,12 +116,12 @@ function maxTempSwitchCtoF (target) {
 
 function windMphtoKph (target) {
   celsiusButton.addEventListener('click', () => {
-    windSpeedData.textContent = " " + Math.round(target * 1.609) + " Kph"
+    windSpeedData.textContent = " " + Math.round(target * 1.609) + " Kph";
   })
 }
 
 function windKphtoMph (target) {
   fahrenheitButton.addEventListener('click', () => {
-    windSpeedData.textContent = " " + Math.round(target / 1.609) + " Mph"
+    windSpeedData.textContent = " " + Math.round(target / 1.609) + " Mph";
   })
 }
