@@ -10,6 +10,7 @@ let humidityData = document.querySelector('#humidity');
 let windSpeedData = document.querySelector('#wind');
 let minTempData = document.querySelector('#min-temp');
 let maxTempData = document.querySelector('#max-temp');
+let bodyTextColor = document.querySelector('#body')
 
 //this function gets the user input
 const formValue = function (e) {
@@ -36,21 +37,28 @@ async function getData(cityName) {
 
     weatherIdData = response.data.weather[0].id;
     // console.log(weatherIdData)
-    //pictures to display depending on weather ID
+    //pictures and text color to display depending on weather ID
     if (weatherIdData < 250 ){
         tempIcon.src = './Pictures/thunder.png';
+        bodyTextColor.style.color = "#8f7727";
     }else if (weatherIdData < 350) {
         tempIcon.src = './Pictures/drizzle.png';
+        bodyTextColor.style.color = "#4d7d74";
     }else if (weatherIdData < 550) {
         tempIcon.src = './Pictures/rain.png';
+        bodyTextColor.style.color = "#3cccbe";
     }else if (weatherIdData < 650) {
         tempIcon.src = './Pictures/snow.png';
+        bodyTextColor.style.color = "#4e6670";
     }else if (weatherIdData < 790) {
         tempIcon.src = './Pictures/mist.png';
+        bodyTextColor.style.color = "#6491a8";
     }else if (weatherIdData === 800) {
         tempIcon.src = './Pictures/sun.png';
+        bodyTextColor.style.color = "#db9652";
     }else if (weatherIdData > 800) {
         tempIcon.src = './Pictures/cloud.png';
+        bodyTextColor.style.color = "#4e6670";
     }
 
     //switches to display F or C, mph or kph
