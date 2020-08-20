@@ -28,8 +28,8 @@ async function getData(cityName) {
     appendCityData(response.data)
     tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`
     weatherConditions.textContent = response.data.weather[0].description
-    humidityData.textContent = response.data.main.humidity
-    windSpeedData.textContent = response.data.wind.speed
+    humidityData.textContent = " " + response.data.main.humidity + "%"
+    windSpeedData.textContent = " " + response.data.wind.speed + " mph"
     weatherIdData = response.data.weather[0].id
     // console.log(weatherIdData)
     if (weatherIdData < 250 ){
