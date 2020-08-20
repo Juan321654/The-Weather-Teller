@@ -3,15 +3,17 @@
 
 
 
-const form = document.querySelector('form')
-let tempIcon = document.querySelector('#weather-picture')
-let tempValue = document.querySelector('#temperature')
-let fahrenheitButton = document.querySelector('.fahrenheit')
-let celsiusButton = document.querySelector('.celsius')
-let weatherConditions = document.querySelector('#conditions')
-let humidityData = document.querySelector('#humidity')
-let windSpeedData = document.querySelector('#wind')
+const form = document.querySelector('form');
+let tempIcon = document.querySelector('#weather-picture');
+let tempValue = document.querySelector('#temperature');
+let fahrenheitButton = document.querySelector('.fahrenheit');
+let celsiusButton = document.querySelector('.celsius');
+let weatherConditions = document.querySelector('#conditions');
+let humidityData = document.querySelector('#humidity');
+let windSpeedData = document.querySelector('#wind');
 let weatherPicture;
+let minTempData = document.querySelector('#min-temp');
+let maxTempData = document.querySelector('#max-temp');
 
 //this function gets the user input
 const formValue = function (e) {
@@ -26,11 +28,13 @@ async function getData(cityName) {
     let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`)
     console.log(response.data)
     appendCityData(response.data)
-    tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`
-    weatherConditions.textContent = response.data.weather[0].description
-    humidityData.textContent = " " + response.data.main.humidity + "%"
-    windSpeedData.textContent = " " + response.data.wind.speed + " mph"
-    weatherIdData = response.data.weather[0].id
+    tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`;
+    weatherConditions.textContent = response.data.weather[0].description;
+    humidityData.textContent = " " + response.data.main.humidity + "%";
+    windSpeedData.textContent = " " + response.data.wind.speed + " mph";
+    minTempData.textContent = `Min temp: ${response.data.main.temp_min}°F`
+    maxTempData.textContent = `Max temp: ${response.data.main.temp_max}°F`
+    weatherIdData = response.data.weather[0].id;
     // console.log(weatherIdData)
     if (weatherIdData < 250 ){
         tempIcon.src = './Pictures/thunder.png'
