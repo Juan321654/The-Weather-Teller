@@ -11,7 +11,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;background: linear-gradient(rgb(248, 191, 84), rgb(162, 223, 231));
-    font-size: 25px;
+    font-size: 3vh;
 }
 
 #weather-picture {
@@ -22,15 +22,15 @@
 form,
 img
 {
-    padding: 60px;
+    padding: 5vh;
 }
 
 div {
-    padding: 10px;
+    padding: 1vh;
 }
 
 button, input {
     background-color:rgba(255, 255, 255, 0.774);
     border-radius: 7px;
-    height:25px;
+    height:5vh;
 }
