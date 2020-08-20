@@ -71,11 +71,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|August 17| Project Approval | Incomplete
-|August 18| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|August 19| Initial Clickable Model  | Incomplete
-|August 20| MVP | Incomplete
+|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|August 17| Project Approval | Complete
+|August 18| Core Application Structure (HTML, CSS, etc.) | Complete
+|August 19| Initial Clickable Model  | Complete
+|August 20| MVP | Complete
 |August 21| Presentations | Incomplete
 
 ## Priority Matrix
@@ -87,22 +87,23 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML structure | L | 2 hrs|  |  |
-| Working with API | H | 3hrs|  |  |
-| Basic CSS | L | 3hrs|  |  |
-| changing C to F | H | 2 hr|  |  |
-| displaying conditions | H | 3 hrs|  |  |
-| displaying city | H | 3 hrs|  |  |
-| displaying weather icons | H | 3 hrs|  |  |
-| advanced CSS (animation | H | 4hrs|  |  |
-| Total | H | 31 hrs|  | |
+| HTML structure | L | 2 hrs| 1hr |  |
+| Working with API | H | 3hrs| 5hr |  |
+| Basic CSS | L | 3hrs| 5hr |  |
+| changing C to F | H | 2 hr| 5hr |  |
+| displaying conditions | H | 3 hrs| 2hr |  |
+| displaying city | H | 3 hrs| 3hr |  |
+| displaying weather icons | H | 3 hrs| 1hr |  |
+| Total | H | 19 hrs| 22 | |
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+making this function took me hours but it forced me to understand better how to talk to the computer. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function switchFtoC (target) {
+  celsiusButton.addEventListener('click', () => {
+    tempValue.innerHTML = Math.round((parseInt(target) - 32) * 5/9) + '\xB0C';
+  })
 }
 ```
 
