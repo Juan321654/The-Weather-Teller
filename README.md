@@ -97,11 +97,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Total | H | 19 hrs| 22 | |
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+making this function took me hours but it forced me to understand better how to talk to the computer. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function switchFtoC (target) {
+  celsiusButton.addEventListener('click', () => {
+    tempValue.innerHTML = Math.round((parseInt(target) - 32) * 5/9) + '\xB0C';
+  })
 }
 ```
 
