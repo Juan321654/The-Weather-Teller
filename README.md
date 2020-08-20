@@ -108,4 +108,4 @@ function switchFtoC (target) {
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+for the post MVP I'm not doing the weather description fade in because the page will look too empty without them displaying right away 
