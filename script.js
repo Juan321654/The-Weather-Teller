@@ -11,7 +11,6 @@ let celsiusButton = document.querySelector('.celsius');
 let weatherConditions = document.querySelector('#conditions');
 let humidityData = document.querySelector('#humidity');
 let windSpeedData = document.querySelector('#wind');
-let weatherPicture;
 let minTempData = document.querySelector('#min-temp');
 let maxTempData = document.querySelector('#max-temp');
 
@@ -114,12 +113,12 @@ function maxTempSwitchCtoF (target) {
 
 function windMphtoKph (target) {
   celsiusButton.addEventListener('click', () => {
-    windSpeedData.innerHTML = " " + Math.round(target * 1.609) + " Kph"
+    windSpeedData.textContent = " " + Math.round(target * 1.609) + " Kph"
   })
 }
 
 function windKphtoMph (target) {
   fahrenheitButton.addEventListener('click', () => {
-    windSpeedData.innerHTML = " " + Math.round(target / 1.609) + " Mph"
+    windSpeedData.textContent = " " + Math.round(target / 1.609) + " Mph"
   })
 }

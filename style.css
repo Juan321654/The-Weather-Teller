@@ -9,8 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;background: linear-gradient(rgb(248, 191, 84), rgb(162, 223, 231));
+    height: 100vh;
+    background: linear-gradient(rgb(248, 191, 84), rgb(162, 223, 231));
     font-size: 3vh;
 }
 
