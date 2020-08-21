@@ -87,14 +87,14 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML structure | L | 2 hrs| 1hr |  |
-| Working with API | H | 3hrs| 5hr |  |
-| Basic CSS | L | 3hrs| 5hr |  |
-| changing C to F | H | 2 hr| 5hr |  |
-| displaying conditions | H | 3 hrs| 2hr |  |
-| displaying city | H | 3 hrs| 3hr |  |
-| displaying weather icons | H | 3 hrs| 1hr |  |
-| Total | H | 19 hrs| 22 | |
+| HTML structure | L | 2 hrs|  | 1hr |
+| Working with API | H | 3hrs|  | 6hr |
+| Basic CSS | L | 3hrs|  | 5hr |
+| changing C to F | H | 2 hr|  | 5hr |
+| displaying conditions | H | 3 hrs|  | 2hr |
+| displaying city | H | 3 hrs|  | 3hr |
+| displaying weather icons | H | 3 hrs|  | 2hr |
+| Total | H | 19 hrs|  | 24 |
 ## Code Snippet
 
 making this function took me hours but it forced me to understand better how to talk to the computer. 
