@@ -94,7 +94,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | displaying conditions | H | 3 hrs|  | 2hr |
 | displaying city | H | 3 hrs|  | 3hr |
 | displaying weather icons | H | 3 hrs|  | 2hr |
-| Total | H | 19 hrs|  | 24 |
+| changing text color/icons | H | 3 hrs|  | 1hr |
+| Total | H | 22 hrs|  | 25hrs |
 ## Code Snippet
 
 making this function took me hours but it forced me to understand better how to talk to the computer. 
