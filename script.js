@@ -26,7 +26,7 @@ form.addEventListener('submit', formValue);
 //this function gets the info from the API
 async function getData(cityName) {
   try {
-    let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`);
+    let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`);
     appendCityData(response.data);
     tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`;
     weatherConditions.textContent = response.data.weather[0].description;
