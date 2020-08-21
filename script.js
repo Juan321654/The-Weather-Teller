@@ -1,5 +1,6 @@
 //key weather fd4262e97d395dae4da9895a5f543573
 
+//global variables
 const form = document.querySelector('form');
 let tempIcon = document.querySelector('#weather-picture');
 let tempValue = document.querySelector('#temperature');
@@ -12,21 +13,20 @@ let minTempData = document.querySelector('#min-temp');
 let maxTempData = document.querySelector('#max-temp');
 let bodyTextColor = document.querySelector('#body')
 
-//this function gets the user input
+//this function gets the user input for the name of the city
 const formValue = function (e) {
   e.preventDefault();
   const input = document.querySelector('input').value;
   document.querySelector('input').value = '';
-  console.log(input);
   getData(input);
 }
 
 form.addEventListener('submit', formValue);
 
+//this function gets the info from the API
 async function getData(cityName) {
   try {
     let response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=fd4262e97d395dae4da9895a5f543573&units=imperial`);
-    console.log(response.data);
     appendCityData(response.data);
     tempValue.textContent = `${Math.floor(response.data.main.temp)} \xB0F`;
     weatherConditions.textContent = response.data.weather[0].description;
@@ -36,7 +36,8 @@ async function getData(cityName) {
     maxTempData.textContent = response.data.main.temp_max;
 
     weatherIdData = response.data.weather[0].id;
-    //use this variable to test the if conditions and comment out the actual variable--
+
+    //use this variable to test the if conditions (comment out the actual variable)----
     // weatherIdData = 349        
     //---------------------------------------------------------------------------------
 
@@ -88,7 +89,6 @@ async function getData(cityName) {
     windMphtoKph(windSpeedData.textContent);
     windKphtoMph(windSpeedData.textContent);
     
-    // switchCtoF(tempValue.textContent)
   } catch (error) {
     console.log(`Error: ${error}`);
   }
