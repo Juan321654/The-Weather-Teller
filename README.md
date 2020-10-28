@@ -1,8 +1,8 @@
-# Project Overview
+## The Weather Teller
 
-## Project Name
+## Deployed Site
+https://theweatherteller.netlify.app/
 
-The Weather Teller
 
 ## Project Description
 
@@ -106,6 +106,3 @@ function switchFtoC (target) {
 
 ## Change Log
 for the post MVP I'm not doing the weather description fade in because the page will look too empty without them displaying right away and the background i chose macthes every icon for the wather, and i like it like this better than changing the background (not the icon) color depending on temperature.
-
-## Deployed Site
-https://theweatherteller.netlify.app/
