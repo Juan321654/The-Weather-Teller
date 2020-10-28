@@ -1,4 +1,4 @@
-## The Weather Teller
+### The Weather Teller
 
 ## Deployed Site
 https://theweatherteller.netlify.app/
