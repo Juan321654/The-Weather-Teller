@@ -41,6 +41,10 @@ button {
     cursor: pointer;
 }
 
+#byMe {
+    font-size: small;
+}
+
 button:hover {
     transition: all .2s ease-in-out;
     transform: scale(1.1);
